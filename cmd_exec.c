@@ -6,7 +6,6 @@
  * @i: type int pointer of index.
  * Return: 1 if the path is searchable in the cd, 0 otherwise.
  */
-
 int is_cdir(char *path, int *i)
 {
 	if (path[*i] == ':')
@@ -30,7 +29,6 @@ int is_cdir(char *path, int *i)
  * @_environ: environment variable
  * Return: location of the command.
  */
-
 char *_which(char *cmd, char **_environ)
 {
 	char *path, *ptr_path, *token_path, *dir;
@@ -80,7 +78,6 @@ char *_which(char *cmd, char **_environ)
  * @datash: data structure
  * Return: 0 if is not an executable, other number if it does
  */
-
 int is_executable(data_shell *datash)
 {
 	struct stat st;
@@ -127,7 +124,6 @@ int is_executable(data_shell *datash)
  * @datash: data structure
  * Return: 1 if there is an error, 0 if not
  */
-
 int check_error_cmd(char *dir, data_shell *datash)
 {
 	if (dir == NULL)
@@ -164,7 +160,6 @@ int check_error_cmd(char *dir, data_shell *datash)
  * @datash: data relevant (args and input)
  * Return: 1 on success.
  */
-
 int cmd_exec(data_shell *datash)
 {
 	pid_t pd;
@@ -172,7 +167,7 @@ int cmd_exec(data_shell *datash)
 	int state;
 	int exec;
 	char *dir;
-	(void)wpd;
+	(void) wpd;
 
 	exec = is_executable(datash);
 	if (exec == -1)
@@ -200,8 +195,7 @@ int cmd_exec(data_shell *datash)
 	}
 	else
 	{
-		do
-		{
+		do {
 			wpd = waitpid(pd, &state, WUNTRACED);
 		} while (!WIFEXITED(state) && !WIFSIGNALED(state));
 	}
@@ -209,3 +203,4 @@ int cmd_exec(data_shell *datash)
 	datash->status = state / 256;
 	return (1);
 }
+

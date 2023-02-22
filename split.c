@@ -7,7 +7,6 @@
  * @bool: type of swap
  * Return: swapped string
  */
-
 char *swap_char(char *input, int bool)
 {
 	int i;
@@ -52,7 +51,6 @@ char *swap_char(char *input, int bool)
  * @input: input string
  * Return: no return
  */
-
 void add_nodes(sep_list **head_s, line_list **head_l, char *input)
 {
 	int i;
@@ -73,12 +71,12 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input)
 	}
 
 	line = _strtok(input, ";|&");
-	do
-	{
+	do {
 		line = swap_char(line, 1);
 		add_line_node_end(head_l, line);
 		line = _strtok(NULL, ";|&");
 	} while (line != NULL);
+
 }
 
 /**
@@ -89,7 +87,6 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input)
  * @datash: data structure
  * Return: no return
  */
-
 void go_next(sep_list **list_s, line_list **list_l, data_shell *datash)
 {
 	int loop_sep;
@@ -132,7 +129,6 @@ void go_next(sep_list **list_s, line_list **list_l, data_shell *datash)
  * @input: input string
  * Return: 0 to exit, 1 to continue
  */
-
 int split_commands(data_shell *datash, char *input)
 {
 
@@ -178,7 +174,6 @@ int split_commands(data_shell *datash, char *input)
  * @input: input string.
  * Return: string splitted.
  */
-
 char **split_line(char *input)
 {
 	size_t bsize;
@@ -215,3 +210,4 @@ char **split_line(char *input)
 
 	return (tokens);
 }
+

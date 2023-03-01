@@ -34,7 +34,6 @@ void bring_line(char **lineptr, size_t *n, char *buffer, size_t j)
 		free(buffer);
 	}
 }
-
 /**
  * get_line - Read inpt from stream
  * @lineptr: buffer that stores the input
@@ -42,7 +41,6 @@ void bring_line(char **lineptr, size_t *n, char *buffer, size_t j)
  * @stream: stream to read from
  * Return: The number of bytes
  */
-
 ssize_t get_line(char **lineptr, size_t *n, FILE *stream)
 {
 	int i;
